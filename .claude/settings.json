@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(just *)",
+      "Bash(git *)",
+      "Bash(gh pr *)",
+      "Bash(gh issue *)"
+    ],
+    "deny": [
+      "Bash(git push --delete *)",
+      "Bash(git push -d *)",
+      "Bash(git push * --delete *)",
+      "Bash(git push * -d *)",
+      "Bash(git push * :*)",
+      "Bash(git branch -d *)",
+      "Bash(git branch -D *)",
+      "Bash(git branch --delete *)",
+      "Bash(git branch * -d *)",
+      "Bash(git branch * -D *)",
+      "Bash(git branch * --delete *)",
+      "Bash(git diff --no-index *)",
+      "Bash(git diff * --no-index *)",
+      "Bash(git grep --no-index *)",
+      "Bash(git grep * --no-index *)",
+      "Bash(rm -rf *)",
+      "Bash(rm -fr *)",
+      "Bash(rm -Rf *)",
+      "Bash(rm -fR *)",
+      "Bash(rm -r -f *)",
+      "Bash(rm -f -r *)",
+      "Bash(rm --recursive --force *)",
+      "Bash(rm --force --recursive *)",
+      "Bash(gh repo delete *)",
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Read(~/.ssh/**)",
+      "Read(~/.aws/**)",
+      "Read(~/.config/gh/**)"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+# Changes here will be overwritten by Copier. Don't edit by hand.
+_commit: v0.2.0
+_src_path: gh:reecedigiacomo/basecamp
+description: Project for testing BaseCamp releases.
+github_owner: reecedigiacomo
+language: python
+project_name: basecamp-sandbox

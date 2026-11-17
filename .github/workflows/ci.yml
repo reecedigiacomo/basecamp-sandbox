@@ -1,0 +1,13 @@
+name: CI
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    uses: reecedigiacomo/basecamp/.github/workflows/check.yml@ci-v1
+    with:
+      language: python
