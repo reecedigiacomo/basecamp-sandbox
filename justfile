@@ -1,3 +1,6 @@
+# Every BaseCamp project has the same four commands: fmt, lint, test and check.
+# The language plug-in's recipes follow.
+
 fmt:
     uv run ruff format
 

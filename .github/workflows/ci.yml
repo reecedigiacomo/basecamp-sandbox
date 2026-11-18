@@ -1,3 +1,5 @@
+# This project's own CI: installs just and the language's tools, then runs `just check`.
+# Add steps as the project needs them; `copier update` merges in template changes.
 name: CI
 
 on:
@@ -8,6 +10,22 @@ permissions:
 
 jobs:
   check:
-    uses: reecedigiacomo/basecamp/.github/workflows/check.yml@ci-v1
-    with:
-      language: python
+    # Rulesets require the check by this name. Renaming it means updating them.
+    name: check / check
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install just
+        run: |
+          curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to "$HOME/.local/bin"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Install the language's tools
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: just check
+        run: just check
